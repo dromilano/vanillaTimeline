@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <script defer src="index.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="tlTitle">Línea de Tiempo Laboral</h1>
+    <div>
+        <div id="toggleBtn">
+            <p>Ocultar formulario</p>
+            <label class="switch">
+                <input type="checkbox">
+                <div class="slider"></div>
+            </label>
+        </div>
+        <div class="navigation">     
+            <button type="button" id="loadBtn">Cargar Progreso</button>       
+            <button type="button" id="saveBtn">Guardar Progreso</button>
+            <button type="button" id="delBtn">Borrar Datos</button>
+        </div>
+    </div>
+
+    <div id="form">
+        <form>
+            <input type="text" id="company" placeholder="Dónde trabajó?">
+            <input type="text" id="start" placeholder="En qué año comenzó?">
+            <input type="text" id="end" placeholder="En qué año finalizó?">
+            <p id="invalid"></p>
+            <p>
+                <button type="button" id="addToTimeline">Agregar</button>
+            </p>
+            <div id="orderBtn">
+                <p id="sortMessage">Viendo de más viejo a más nuevo</p>
+                <label class="switch">
+                    <input type="checkbox" id="sortBtn">
+                    <div class="slider"></div>
+                </label>
+            </div>
+        </form>
+    </div>
+    <div id="inputs">
+    </div>
+    <div id="timeline">
+    </div>
+</body>
