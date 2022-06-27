@@ -31,7 +31,6 @@ function requestName(){
 };
 document.addEventListener('DOMContentLoaded', function () {
     usersName.push( JSON.parse(localStorage.getItem("username")));
-    console.log(usersName);
     if (usersName.every(value => value === null)){
         usersName.splice(0,usersName.length);
         requestName();
