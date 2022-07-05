@@ -1,11 +1,29 @@
 * {
     box-sizing: border-box;
   }
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    font-family: Helvetica, sans-serif;
+    box-sizing: border-box;
+  }
   
   /* Set a background color */
   body {
     background-color: #474e5d;
-    font-family: Helvetica, sans-serif;
+    
+    
+  }
+  body {
+    background-color: hsl(210, 15%, 10%);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+DQo8ZyBzdHlsZT0iZmlsbDogaHNsYSgwLCAwJSwgMTAwJSwgMC4wMik7IHN0cm9rZTogaHNsYSgwLCAwJSwgMTAwJSwgMC4wMik7IHN0cm9rZS13aWR0aDogMC4xOyI+DQo8cGF0aCBkPSJtNyA0bDE2IDV2NGwtMTMtNGMwIDAtMiAzLTIgNyAwIDQgMiA3IDIgN2wxMC0yLTEtNCA0LTJ2MTZoLTRsMS03LTEzIDNjMCAwLTMtNy0zLTExIDAtNCAzLTEyIDMtMTIiLz4NCjxwYXRoIGQ9Im00MSA0bC0xNiA1djRsMTMtNGMwIDAgMiAzIDIgNyAwIDQtMiA3LTIgN2wtMTAtMiAxLTQtNC0ydjE2aDRsLTEtNyAxMyAzYzAgMCAzLTcgMy0xMSAwLTQtMy0xMi0zLTEyIi8+DQo8cGF0aCBkPSJtMTMgMzNoNHYxMWMwIDAtNC00LTQtNyAwLTMgMC00IDAtNCIvPg0KPHBhdGggZD0ibTMxIDMzaDRjMCAwIDAgMSAwIDQgMCAzLTQgNy00IDd6Ii8+DQo8cGF0aCBkPSJtMTkgMzNoNHY0aC00eiIvPg0KPHBhdGggZD0ibTI1IDMzaDR2NGgtNHoiLz4NCjwvZz4NCjwvc3ZnPg0K);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: hsl(0, 0%, 80%);
+    max-width: 50em;
+    margin: 0 auto;
     text-align: center;
   }
 
@@ -13,7 +31,13 @@
     color: white;
 
   }
-  
+
+  h2, a {
+    color: #fd9f55;
+  }
+
+
+
   /* The actual timeline (the vertical ruler) */
   #timeline {
     position: relative;
@@ -131,15 +155,25 @@
         text-align: center;
         margin: 0 30px;
     }
-    #addToTimeline{
+    #addToTimeline {
       display: flex;
       justify-content: center;
       margin: auto;
+      margin-top: 3vh;
+      width: fit-content;
     }
 
 
 
 /* The switch - the box around the slider */
+
+#hideForm {
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  right: 1vw;
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -230,6 +264,12 @@ input:checked + .slider:before {
 }
 
 
+
+#orderBtn {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+}
   
   /* Media queries - Responsive timeline on screens less than 600px wide */
   @media screen and (max-width: 600px) {
@@ -301,4 +341,177 @@ input:checked + .slider:before {
 
 .swal-overlay {
   background-color: #474e5d;
+}
+
+
+
+
+#appContainer {
+  width: 15VW;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  white-space: pre-line;
+  overflow: hidden;
+  position: absolute;
+  font-size: 0.7em;
+}
+
+
+
+
+/* NAVBAR STYLING STARTS */
+li {
+  list-style: none;
+ }
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+  background-color: rgb(39, 39, 39);
+  color: #fff;
+ }
+
+ /* NAVBAR MENU */
+ .menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+ }
+ .menu li:hover {
+  background-color: #4c9e9e;
+  border-radius: 5px;
+  transition: 0.3s ease;
+ }
+ .menu li {
+  padding: 5px 14px;
+ }
+
+
+
+.city-icon {
+  height: 40px;
+}
+
+#weather div {
+  padding: 0 2.5px;
+  align-items: center;
+  display: inline-flex;
+}
+
+#weather {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 10000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: scroll; 
+  background-color: rgb(23 23 23 / 82%); 
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10vh auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 60vw;
+  height: 80vh;
+  overflow: scroll;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  font-size: 28px;
+  margin-top: -2vh;
+  position: absolute;
+  display: flex;
+  right: 21vw;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+/* CSS */
+.button-6 {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 10vw;
+}
+
+.button-6:hover,
+.button-6:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.button-6:hover {
+  transform: translateY(-1px);
+}
+
+.button-6:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+
+nav {
+  position: fixed;
+  right: 0;
+  top: 2vw;
+  flex-flow: column;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  line-height: 1.8;
 }

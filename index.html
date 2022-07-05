@@ -1,47 +1,72 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <script defer src="index.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1 id="tlTitle">Línea de Tiempo Laboral</h1>
-    <div>
-        <div id="toggleBtn">
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <script defer src="index.js"></script>
+        <script defer src="api.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>Línea de tiempo</title>
+    </head>
+    <body>
+        <div id="hideForm">
             <p>Ocultar formulario</p>
             <label class="switch">
                 <input type="checkbox">
                 <div class="slider"></div>
             </label>
         </div>
-        <div class="navigation">     
-            <button type="button" id="loadBtn">Cargar Progreso</button>       
-            <button type="button" id="saveBtn">Guardar Progreso</button>
-            <button type="button" id="delBtn">Borrar Datos</button>
+        <div id="weather">
+            <div class="icon">---</div>
+            <div class="temp">-°C</div>
+            <div class="summary">----</div>
+            <div class="location"></div>
         </div>
-    </div>
 
-    <div id="form">
-        <form>
-            <input type="text" id="company" placeholder="Dónde trabajó?">
-            <input type="text" id="start" placeholder="En qué año comenzó?">
-            <input type="text" id="end" placeholder="En qué año finalizó?">
-            <p id="invalid"></p>
-            <p>
-                <button type="button" id="addToTimeline">Agregar</button>
-            </p>
-            <div id="orderBtn">
-                <p id="sortMessage">Viendo de más viejo a más nuevo</p>
-                <label class="switch">
-                    <input type="checkbox" id="sortBtn">
-                    <div class="slider"></div>
-                </label>
-            </div>
-        </form>
-    </div>
-    <div id="inputs">
-    </div>
-    <div id="timeline">
-    </div>
-</body>
+        <nav class="navbar">       
+            <li><button type="button" id="loadBtn" class="button-6">Cargar Progreso</button></li>       
+            <li><button type="button" id="saveBtn" class="button-6">Guardar Progreso</button></li>
+            <li><button type="button" id="delBtn" class="button-6">Borrar Datos</button></li>
+            <li><button type="button" id="jobBtn" class="button-6">Ver trabajos disponibles</button></li>
+        </nav>
+
+        <h1 id="tlTitle">Línea de Tiempo Laboral</h1>
+    
+        <div id="appContainer"></div>
+
+        <div id="form">
+            <form>
+                <input type="text" id="company" placeholder="Dónde trabajó?">
+                <input type="text" id="start" placeholder="En qué año comenzó?">
+                <input type="text" id="end" placeholder="En qué año finalizó?">
+                <p id="invalid"></p>
+                <p>
+                    <button type="button" id="addToTimeline" class="button-6">Agregar</button>
+                </p>
+                <div id="orderBtn">
+                    <p id="sortMessage">Viendo de más viejo a más nuevo</p>
+                    <label class="switch">
+                        <input type="checkbox" id="sortBtn">
+                        <div class="slider"></div>
+                    </label>
+                </div>
+            </form>
+        </div>
+        <div id="inputs">
+        </div>
+        <div id="timeline">
+        </div>
+
+        
+        <div id="myModal" class="modal">
+
+        
+        <div class="modal-content" id="joblist">
+            <span class="close">&times;</span>
+        </div>
+
+        </div>
+    </body>
+</html>
+
+
