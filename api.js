@@ -44,7 +44,7 @@ if (navigator.geolocation) {
 	navigator.geolocation.getCurrentPosition((position) => {
 	lon = position.coords.longitude;
 	lat = position.coords.latitude;
-	const key = "36f68383de53b2227f6e94d1996ee330";
+	const key = "";
 	const url =`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&`+`lon=${lon}&appid=${key}`;
 
 	// Calling the API
