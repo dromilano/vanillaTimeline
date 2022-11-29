@@ -1,7 +1,7 @@
 // API para mostrar listados de ofertas de empleo
 
 let url = "https://jooble.org/api/";
-let key = "16c35eff-150b-4ce5-b3af-c8b34c1d8c3d";
+let key = "";
 let params = "{ location: 'mexico'}"
 
 let http = new XMLHttpRequest();
